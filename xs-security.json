@@ -1,0 +1,26 @@
+{
+    "xsappname": "MailOnPremise",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "uaa.user",
+            "description": "UAA"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Token_Exchange",
+            "description": "UAA Token Exchange",
+            "scope-references": [
+                "uaa.user"
+            ]
+        }
+    ]
+    ,
+    "oauth2-configuration": {
+        "token-validity": 3600,
+        "redirect-uris": [
+            "https://*-MailOnPremise-app.cfapps.*.hana.ondemand.com/login/callback"
+        ]
+    }
+}
