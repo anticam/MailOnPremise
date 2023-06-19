@@ -31,3 +31,8 @@ Authorization: Basic joe:
 GET http://localhost:4004/catalog/userInfo()
 Authorization: Basic joe:
 ###
+
+### Check mail
+POST http://localhost:4004/mail/sendMail
+Content-Type: application/json
+

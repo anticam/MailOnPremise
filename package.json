@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "description": "Business Application",
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
   "dependencies": {
     "@sap-cloud-sdk/connectivity": "^3.2.0",
@@ -26,7 +26,7 @@
     "app/resources/fiori"
   ],
   "scripts": {
-    "start": "cds run"
+    "start": "cds run --profile hybrid"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -57,6 +57,18 @@
     "requires": {
       "uaa": {
         "kind": "xsuaa"
+      },
+      "[hybrid]": {
+        "auth": {
+          "kind": "xsuaa"
+        },
+        "mailService": {
+          "kind": "rest",
+          "credenials": {
+            "destination": "mail_destination",
+            "forwardAuthToken": true
+          }
+        }
       },
       "auth": {
         "[production]": {

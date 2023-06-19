@@ -1,0 +1,50 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "auth": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "530335dctrial",
+          "space": "dev",
+          "instance": "mail-xsuaa",
+          "key": "mail-xsuaa-key",
+          "resolved": false
+        },
+        "kind": "xsuaa",
+        "vcap": {
+          "name": "auth"
+        }
+      },
+      "destinations": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "530335dctrial",
+          "space": "dev",
+          "instance": "mail-destination",
+          "key": "mail-destination-key",
+          "resolved": false
+        },
+        "kind": "destinations",
+        "vcap": {
+          "name": "destinations"
+        }
+      },
+      "custom-service:mail-connectivity": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "530335dctrial",
+          "space": "dev",
+          "instance": "mail-connectivity",
+          "key": "mail-connectivity-key",
+          "resolved": false
+        },
+        "vcap": {
+          "name": "custom-service:mail-connectivity"
+        }
+      }
+    }
+  }
+}
