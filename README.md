@@ -43,3 +43,9 @@ npm install @sap-cloud-sdk/connectivity
 npm install @sap/xssec​
 npm install passport
 ```
+
+SCC access control list:  
+back-end type: non-SAP system  
+protocol: TCP  
+virtual: sandbox.smtp.mailtrap.io:2525  
+internal: sandbox.smtp.mailtrap.io:2525  
