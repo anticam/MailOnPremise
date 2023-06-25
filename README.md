@@ -1,6 +1,30 @@
 # MailOnPremise - Mail
 > Business Application
 
+Create a CAP application with [yo](https://yeoman.io/)  SAP HANA Academy [CAP generator](https://www.npmjs.com/package/generator-saphanaacademy-cap)
+
+Install yo and the CAP template generator:
+```
+npm i -g yo
+npm i -g generator-saphanaacademy-cap
+```
+
+Create a basic CAP project
+```
+yo saphanaacademy-cap
+```
+
+Extend the CAP service with SMTP support, follow blog
+[Connecting On Premise Mail Destination and Sending Email Using SAP Cloud SDK JavaScript Version 3 on SAP CAP](https://blogs.sap.com/2023/02/14/connecting-on-premise-mail-destination-using-sap-cloud-sdk-javascript-version-3-on-sap-cap/)
+```
+npm install
+npm install @sap-cloud-sdk/mail-client
+npm install @sap-cloud-sdk/connectivity
+npm install @sap/xssec​
+npm install passport
+```
+
+
 Create xsuaa (application), destination (lite) and connectivity (lite) service instances.
 ```
 cf create-service SERVICE PLAN SERVICE_INSTANCE [-b BROKER] [-c PARAMETERS_AS_JSON] [-t TAGS]
@@ -41,13 +65,6 @@ cf service MailOnPremise-dest
 cf service MailOnPremise-conn
 ```
 
-```
-npm install
-npm install @sap-cloud-sdk/mail-client
-npm install @sap-cloud-sdk/connectivity
-npm install @sap/xssec​
-npm install passport
-```
 
 In BTP Desintations create a new MAIL destination:
 ```
@@ -80,3 +97,12 @@ python -m aiosmtpd -n
 ```
 
 After deployment bind the application to the service instances. It can be done by mta.yaml.
+
+From test.http call the service
+```
+POST https://530335dctrial-dev-mailonpremise-srv.cfapps.us10-001.hana.ondemand.com/mail/sendMail
+Content-Type: application/json
+```
+
+Content in cmd:
+![python -m aiosmtpd -n](./images/smtp006.png)
