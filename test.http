@@ -36,3 +36,30 @@ Authorization: Basic joe:
 POST http://localhost:4004/mail/sendMail
 Content-Type: application/json
 
+### Check mail
+# in cmd start
+# python -m aiosmtpd -n
+# call /mail/sendMail
+POST https://530335dctrial-dev-mailonpremise-srv.cfapps.us10-001.hana.ondemand.com/mail/sendMail
+Content-Type: application/json
+
+
+# Microsoft Windows [Version 10.0.22621.1848]
+# (c) Microsoft Corporation. Minden jog # fenntartva.
+# 
+# C:\Users\antal>python -m aiosmtpd -n
+# ---------- MESSAGE FOLLOWS ----------
+# Content-Type: text/plain; charset=utf-8
+# From: example@example.com
+# To: bogyo.kapitany@gmail.com
+# Subject: Test On Premise Destination
+# Message-ID: # <70539096-b641-49cd-577e-751d9500f8ac@example.# com>
+# Content-Transfer-Encoding: 7bit
+# Date: Sun, 25 Jun 2023 19:23:50 +0000
+# MIME-Version: 1.0
+# X-Peer: ('127.0.0.1', 54431)
+# 
+# If you receive this e-mail, you are successful.
+# ------------ END MESSAGE ------------
+
+
